@@ -1,0 +1,10 @@
+# Visual Studio папка с настройки
+.vs/
+
+# Build output
+bin/
+obj/
+
+# Потребителски и временни файлове
+*.user
+*.suo

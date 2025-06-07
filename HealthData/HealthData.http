@@ -1,0 +1,115 @@
+@HealthData_HostAddress = https://localhost:7183
+
+
+
+POST {{HealthData_HostAddress}}/api/users
+Content-Type: application/json
+
+{
+"username": "ivan.ivanov",
+  "passwordHash": "UHYzc3cwcmQhIQ==",
+  "fullName": "Ivan Ivanov",
+  "email": "ivan.ivanov@example.com",
+  "roleId": 2,
+  "doctorNumber": "DOC123",
+  "status": "Active",
+  "createdAt": "2025-06-05T00:00:00Z",
+  "modifiedAt": "2025-06-05T00:00:00Z",
+  "role": {
+    "roleId": 2,
+    "roleName": "Doctor",
+    "description": "Medical practitioner"
+  }
+}
+
+###
+
+
+POST {{HealthData_HostAddress}}/api/referrals
+Content-Type: application/json
+
+{
+  "patientId":      1,
+  "practitionerId": 1,
+  "referralType":   "Cardiology Consult",
+  "dateIssued":     "2025-06-05T10:30:00Z",
+  "validUntil":     "2025-07-05T10:30:00Z"
+  
+}
+
+###
+
+POST {{HealthData_HostAddress}}/api/prescriptions
+Content-Type: application/json
+
+{
+  //Prescription
+}
+
+###
+
+
+@id=1
+GET {{HealthData_HostAddress}}/api/users/{{id}}
+
+###
+
+POST {{HealthData_HostAddress}}/api/patients
+Content-Type: application/json
+
+{
+  //Patient
+}
+
+###
+
+POST {{HealthData_HostAddress}}/api/prescriptions
+Content-Type: application/json
+
+{
+  //Prescription
+}
+
+###
+
+GET {{HealthData_HostAddress}}/api/referrals
+
+###
+
+GET {{HealthData_HostAddress}}/api/referrals/{{id}}
+
+###
+
+GET {{HealthData_HostAddress}}/api/patients/{{id}}
+
+###
+
+
+
+
+POST {{HealthData_HostAddress}}/api/patients
+Content-Type: application/json
+
+{
+    "firstName": "Ivan",
+  "lastName": "Ivanov",
+  "dob": "1990-01-01T00:00:00",
+  "gender": "M",
+  "nationalId": "1234567890",
+  "phone": "0888123456",
+  "email": "ivan.ivanov@example.com",
+  "address": "Sofia, Bulgaria",
+  "insurancePolicyId": 1,
+  "createdAt": "2025-06-05T00:00:00",
+  "modifiedAt": "2025-06-05T00:00:00"
+}
+
+###
+
+GET {{HealthData_HostAddress}}/api/patients/{{id}}
+
+###
+
+GET {{HealthData_HostAddress}}/api/patients
+
+###
